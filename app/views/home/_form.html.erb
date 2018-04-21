@@ -1,0 +1,13 @@
+<div>
+    <%= f.file_field :image %>
+
+    <% if @post.image.present? %>
+        <%= image_tag  @post.image %>
+    <% end %>
+
+    <%= f.text_field :title %>
+
+    <%= f.text_field :body %>
+
+    <%= f.submit %>
+</div>
