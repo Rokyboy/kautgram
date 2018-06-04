@@ -1,12 +1,14 @@
-<% @posts.each do |post| %>
-    <div>
-        <%= image_tag  post.image %>
-        <h3><%= post.title %></h3>
-        <p><%= post.body %></p>
-
-        <%= link_to  "Update", edit_home_path(post) %>
-        <%= link_to  "Delete", home_path(post), method: :delete %>
-    </div>
-<% end %>
-
 <%= link_to  "Create", new_home_path %>
+
+<section class="home">
+    <% @posts.each do |post| %>
+        <article class="home__article">
+            <%= image_tag  post.image %>
+            <h3><%= post.title %></h3>
+            <p><%= post.body %></p>
+
+            <%= link_to  "Update", edit_home_path(post) %>
+            <%= link_to  "Delete", home_path(post), method: :delete %>
+        </article>
+    <% end %>
+</section>

@@ -1,1 +1,1 @@
-Paperclip::Attachment.default_options[:s3_host_name] = ENV.fetch("AWS_S3_HOST_NAME")
+Paperclip::Attachment.default_options[:s3_host_name] = "s3-us-west-2.amazonaws.com"

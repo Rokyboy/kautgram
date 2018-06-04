@@ -1,3 +1,32 @@
-.bg-red {
-    background-color: red;
+html,
+body {
+    margin: 0;
+    padding: 0
+}
+
+main {
+    padding-top: 83px;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    padding: 20px 24px;
+    display: flex;
+    justify-content: center;
+    background: #fff;
+    border-bottom: 1px solid #d8d8d8;
+
+    em {
+        font-family: 'Pacifico', cursive;
+        letter-spacing: 3px;
+        font-size: 24px;
+        color: cadetblue;
+    }
+}
+
+.container {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 40px;
 }
