@@ -3,7 +3,7 @@
 <section class="home">
     <% @posts.each do |post| %>
         <article class="home__article">
-            <%= image_tag  post.image %>
+            <%= image_tag post.image, class: 'home__article__img' %>
             <h3><%= post.title %></h3>
             <p><%= post.body %></p>
 
