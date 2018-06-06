@@ -23,7 +23,7 @@ default: &default
 
 development:
   <<: *default
-  username: polak
+  username: postgres
   database: kautgram_development
 
   # The specified database role being used to connect to postgres.
@@ -59,7 +59,7 @@ development:
 test:
   <<: *default
   database: kautgram_test
-  username: polak
+  username: postgres
   password: ''
   timeout: 5000
   host: <%= ENV.fetch("RAILS_TEST_HOST_NAME") { '' } %>
