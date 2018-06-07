@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
-  before_action :authenticate_user!, exept: :index 
+  before_action :authenticate_user!, except: :index 
 
   def index
     @posts = Post.all
@@ -10,7 +10,7 @@ class HomeController < ApplicationController
   end
 
   def create
-    @post = Post.new(post_attributes)
+    @post = Post.new(post_attributes.merge(user_id: curret_user.id))
 
     if @post.save!
       redirect_to root_path
