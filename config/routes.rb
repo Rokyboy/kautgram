@@ -4,6 +4,11 @@ Rails.application.routes.draw do
 
   resources :home
   resources :post
+  resources :user, only: :show do
+    collection do
+      get :show
+    end
+  end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

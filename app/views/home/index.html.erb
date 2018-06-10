@@ -1,6 +1,14 @@
 <section class="home">
     <% @posts.each do |post| %>
         <article class="home__article">
+            <%= link_to user_path(post.user.nick_name) do %>
+                <div class="home__article__user">
+                    <div class="home__article__user__img">
+                        <%= image_tag post.user.avatar %>
+                    </div>
+                    <p><%= post.user.user_name %></p>
+                </div>
+            <% end %>
             <%= image_tag post.image, class: 'home__article__img' %>
             <h3><%= post.title %></h3>
             <p><%= post.body %></p>
