@@ -1,5 +1,5 @@
-<div class="post-form">
-    <div id="area" class="post-form__dropdown post-form__col">
+<div class="form">
+    <div id="area" class="form__dropdown form__col">
       <% if @post.image.present? %>
         <%= f.label :image %>
         <%= f.file_field :image, id: 'post_image' %>
@@ -11,18 +11,18 @@
       <% end %>
     </div>
 
-    <div class="post-form__col post-form__col--center">
-        <div class="post-form__field">
+    <div class="form__col form__col--center">
+        <div class="form__field">
             <%= f.label :title, 'Post title:' %>
             <%= f.text_field :title %>
         </div>
         
-        <div class="post-form__field">
+        <div class="form__field">
             <%= f.label :body, 'Post description:' %>
             <%= f.text_field :body %>
         </div>
 
-        <div class="post-form__submit">
+        <div class="form__submit">
             <%= f.submit %>
         </div>
     </div>

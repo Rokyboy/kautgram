@@ -7,7 +7,7 @@
 
     <div class="header__actions">
         <% if user_signed_in? %>
-        <%= link_to  "Create", new_home_path, class: "create" %>
+            <%= link_to  "Create", new_post_path, class: "create" %>
             <%= link_to  "Sing out", destroy_user_session_path, method: :delete, class: "auth" %>
         <% else %>
             <%= link_to  "Sign in", new_user_session_path, class: "auth" %>      
