@@ -12,4 +12,24 @@ class User < ApplicationRecord
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
 
   has_many :posts
+  has_many :users
+  has_many :followers
+
+  before_save :set_nick_name
+
+  def followers_count
+    Follower.where(follow_id: nick_name).count
+  end
+
+  def subscrition_count
+    Follower.where(user_id: id).count
+  end
+
+  private
+
+  def set_nick_name
+    unless self.nick_name.present?
+      self.nick_name = Date.today
+    end
+  end
 end

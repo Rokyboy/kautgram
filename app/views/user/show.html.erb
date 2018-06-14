@@ -7,6 +7,17 @@
             <h3><%= @user.user_name %></h3>
             <em><%= @user.nick_name %></em>
             <p><%= @user.bio %></p>
+
+            <% unless current_user&.nick_name == params[:id] %>
+                <% if current_user.followers.find_by(follow_id: params[:id]).present? %>
+                    <%= link_to  "unfollow", user_follower_path(params[:id]), method: :delete %>
+                <% else %>
+                    <%= link_to  "follow", user_follower_index_path(params[:id]), method: :post %>
+                <% end %>
+            <% end %>
+        </div>
+        <div class="user-page__header__follower">
+            <%= @user.followers_count %>
         </div>
     </div>
 
