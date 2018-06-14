@@ -1,4 +1,28 @@
-<%= image_tag @user.avatar %>
-<%= @user.user_name %>
-<%= @user.nick_name %>
-<%= @user.bio %>
+<div class="user-page">
+    <div class="user-page__header">
+        <div class="user-page__header__image">
+            <%= image_tag @user.avatar %>
+        </div>
+        <div class="user-page__header__text">
+            <h3><%= @user.user_name %></h3>
+            <em><%= @user.nick_name %></em>
+            <p><%= @user.bio %></p>
+        </div>
+    </div>
+
+    <div class="user-page__list">
+        <% @user.posts.each do |post| %>
+            <%= link_to post_path(post) do %>
+                <div class="user-page__item">
+                    <div class="user-page__item__image">
+                        <div class="user-page__item__overlay overlay"></div>
+                        <%= image_tag post.image %>
+                    </div>
+                    <div class="user-page__item__content text">
+                        <p><%= post.title %></p>
+                    <div>
+                </div>
+            <% end %>
+        <% end %>
+    </div>
+</div>
