@@ -37,6 +37,18 @@
                 font-weight: 200;
             }
         }
+
+        &__follower {
+            border-radius: 50%;
+            border: 2px solid cadetblue;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 12px;
+            margin-left: 20px;
+        }
     }
 
     &__list {
